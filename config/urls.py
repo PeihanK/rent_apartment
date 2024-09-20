@@ -1,4 +1,6 @@
 from django.contrib import admin
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 from adverts.views import AdvertListView, AdvertDetailView, AdvertCreateView, AdvertUpdateView, AdvertDeleteView
 from bookings.views import CreateBookingView, ConfirmBookingView, CancelBookingView, BookingListView
 from reviews.views import ListReviewView, CreateReviewView
@@ -11,7 +13,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="First API",
+        title="Rent Apartment API",
         default_version='v1',
         description="Test description",
         terms_of_service="https://www.google.com/policies/terms/",
@@ -27,6 +29,8 @@ urlpatterns = [
     path('register/', RegisterUserView.as_view(), name='register'),
     path('api/login/', LoginView.as_view(), name='login'),
     path('api/logout/', LogoutView.as_view(), name='logout'),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('adverts/', AdvertListView.as_view(), name='adverts-list'),
     path('adverts/<int:pk>/', AdvertDetailView.as_view(), name='advert-detail'),
     path('adverts/create/', AdvertCreateView.as_view(), name='advert-create'),

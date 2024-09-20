@@ -2,6 +2,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
+from rest_framework_simplejwt.tokens import RefreshToken
+
 from users.models import User
 import re
 
@@ -50,6 +52,15 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.Serializer):
 	email = serializers.EmailField()
 	password = serializers.CharField(max_length=128, write_only=True)
+
+	class Meta:
+		model = User
+		fields = (
+
+			'email',
+			'password',
+
+		)
 
 	def validate(self, data):
 		email = data.get('email')

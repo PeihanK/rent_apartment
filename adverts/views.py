@@ -1,9 +1,8 @@
 from django.db.models import Q
 from django.shortcuts import render
-from rest_framework import generics, permissions
+from rest_framework import generics
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
 from adverts.models import Advert
 from adverts.serializers import AdvertSerializer, AdvertCreateUpdateSerializer
 
