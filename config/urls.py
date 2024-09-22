@@ -1,8 +1,9 @@
 from django.contrib import admin
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-
-from adverts.views import AdvertListView, AdvertDetailView, AdvertCreateView, AdvertUpdateView, AdvertDeleteView
-from bookings.views import CreateBookingView, ConfirmBookingView, CancelBookingView, BookingListView
+from adverts.views import AdvertListView, AdvertDetailView, AdvertCreateView, AdvertUpdateView, AdvertDeleteView, \
+    AvailableDatesView, MyAdvertsListView
+from bookings.views import CreateBookingView, ConfirmBookingView, CancelBookingView, BookingListView, \
+    DeclineBookingView
 from reviews.views import ListReviewView, CreateReviewView
 from users.views import LoginView, LogoutView
 from django.urls import path
@@ -38,9 +39,12 @@ urlpatterns = [
     path('adverts/<int:pk>/delete/', AdvertDeleteView.as_view(), name='advert-delete'),
     path('adverts/<int:advert_id>/reviews/', ListReviewView.as_view(), name='reviews-list'),
     path('adverts/<int:advert_id>/reviews/create/', CreateReviewView.as_view(), name='reviews-create'),
-    path('bookings/', BookingListView.as_view(), name='booking-list'),
+    path('adverts/<int:advert_id>/available-dates/', AvailableDatesView.as_view(), name='available-dates'),
+    path('my-adverts/', MyAdvertsListView.as_view(), name='user-adverts'),
     path('bookings/create/', CreateBookingView.as_view(), name='booking-create'),
     path('bookings/<int:pk>/confirm/', ConfirmBookingView.as_view(), name='booking-confirm'),
+    path('bookings/<int:pk>/decline/', DeclineBookingView.as_view(), name='booking-decline'),
     path('bookings/<int:pk>/cancel/', CancelBookingView.as_view(), name='booking-cancel'),
+    path('bookings/', BookingListView.as_view(), name='booking-list'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]

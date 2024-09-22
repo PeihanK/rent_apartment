@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c642b84-0655-400b-9952-f94cb2489bc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/users/middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adverts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/adverts/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adverts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/adverts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookings/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookings/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookings/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookings/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookings/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookings/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/drf-yasg/swagger-ui.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +74,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ICH\Desktop\web development\rent_apartment\config" />
+    </key>
+  </component>
   <component name="RunManager" selected="Django Server.rent_apartment">
     <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rent_apartment" />
@@ -149,7 +159,8 @@
       <workItem from="1726171132942" duration="3000" />
       <workItem from="1726218388990" duration="39713000" />
       <workItem from="1726644753032" duration="64337000" />
-      <workItem from="1726813872913" duration="12189000" />
+      <workItem from="1726813872913" duration="29317000" />
+      <workItem from="1726992671556" duration="15581000" />
     </task>
     <servers />
   </component>

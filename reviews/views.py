@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
 from adverts.models import Advert
 from reviews.models import Review
 from reviews.serializers import ReviewSerializer

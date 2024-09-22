@@ -3,7 +3,6 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
-
 from users.models import User
 import re
 
@@ -41,7 +40,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 		return data
 
 	def create(self, validated_data):
-		validated_data.pop('re_password')  # Удаление re_password
+		validated_data.pop('re_password')  # delete re_password
 		password = validated_data.pop('password')
 		user = User(**validated_data)
 		user.set_password(password)

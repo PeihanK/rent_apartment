@@ -53,6 +53,8 @@ MIDDLEWARE = [
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 	'corsheaders.middleware.CorsMiddleware',
 	'django.middleware.common.CommonMiddleware',
+	'config.middleware.JWTAuthenticationMiddleware',
+
 
 ]
 
@@ -84,17 +86,15 @@ REST_FRAMEWORK = {
 	'DEFAULT_PERMISSION_CLASSES': (
 		'rest_framework.permissions.IsAuthenticated',  # Доступ только для аутентифицированных пользователей
 	),
+	'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 
 SIMPLE_JWT = {
-	'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-	'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
+	'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+	'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 	'ROTATE_REFRESH_TOKENS': True,
 	'BLACKLIST_AFTER_ROTATION': True,
-	'ALGORITHM': 'HS256',
-	'SIGNING_KEY': SECRET_KEY,
 	'AUTH_HEADER_TYPES': ('Bearer',),
-	'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
 }
 
 ROOT_URLCONF = 'config.urls'

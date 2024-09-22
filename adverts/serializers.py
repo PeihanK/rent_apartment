@@ -13,3 +13,5 @@ class AdvertCreateUpdateSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Advert
 		fields = ['title', 'description', 'address', 'price', 'room_count', 'housing_type', 'is_active']
+
+
